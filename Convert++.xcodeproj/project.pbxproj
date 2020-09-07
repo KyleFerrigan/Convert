@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD1064BA2506717200ECCD2D /* OhmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1064B52506717200ECCD2D /* OhmsView.swift */; };
+		FD1064BB2506717200ECCD2D /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1064B62506717200ECCD2D /* SpeedView.swift */; };
+		FD1064BC2506717200ECCD2D /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1064B72506717200ECCD2D /* TempView.swift */; };
+		FD1064BD2506717200ECCD2D /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1064B82506717200ECCD2D /* DistanceView.swift */; };
+		FD1064BE2506717200ECCD2D /* OhmsViewRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1064B92506717200ECCD2D /* OhmsViewRedux.swift */; };
 		FD4A7FEE246CB517008145CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A7FED246CB517008145CE /* AppDelegate.swift */; };
 		FD4A7FF0246CB517008145CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A7FEF246CB517008145CE /* SceneDelegate.swift */; };
 		FD4A7FF2246CB517008145CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A7FF1246CB517008145CE /* ContentView.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD1064B52506717200ECCD2D /* OhmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhmsView.swift; sourceTree = "<group>"; };
+		FD1064B62506717200ECCD2D /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		FD1064B72506717200ECCD2D /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		FD1064B82506717200ECCD2D /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
+		FD1064B92506717200ECCD2D /* OhmsViewRedux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhmsViewRedux.swift; sourceTree = "<group>"; };
 		FD4A7FEA246CB517008145CE /* Convert++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4A7FED246CB517008145CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4A7FEF246CB517008145CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +66,11 @@
 		FD4A7FEC246CB517008145CE /* Convert++ */ = {
 			isa = PBXGroup;
 			children = (
+				FD1064B82506717200ECCD2D /* DistanceView.swift */,
+				FD1064B52506717200ECCD2D /* OhmsView.swift */,
+				FD1064B92506717200ECCD2D /* OhmsViewRedux.swift */,
+				FD1064B62506717200ECCD2D /* SpeedView.swift */,
+				FD1064B72506717200ECCD2D /* TempView.swift */,
 				FD4A7FED246CB517008145CE /* AppDelegate.swift */,
 				FD4A7FEF246CB517008145CE /* SceneDelegate.swift */,
 				FD4A7FF1246CB517008145CE /* ContentView.swift */,
@@ -146,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1064BE2506717200ECCD2D /* OhmsViewRedux.swift in Sources */,
+				FD1064BC2506717200ECCD2D /* TempView.swift in Sources */,
 				FD4A7FEE246CB517008145CE /* AppDelegate.swift in Sources */,
+				FD1064BD2506717200ECCD2D /* DistanceView.swift in Sources */,
 				FD4A7FF0246CB517008145CE /* SceneDelegate.swift in Sources */,
 				FD4A7FF2246CB517008145CE /* ContentView.swift in Sources */,
+				FD1064BA2506717200ECCD2D /* OhmsView.swift in Sources */,
+				FD1064BB2506717200ECCD2D /* SpeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
