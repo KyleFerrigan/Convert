@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct DistanceView: View {
-    @State var imperialIn : Float = 0.0
-    @State var imperialTemp : Float = 0.0
-    @State var metricIn : Float = 0.0
-    @State var metricTemp : Float = 0.0
+    @State var imperialIn : Double?
+    @State var metricIn : Double?
+    
+    @State var result : String = ""
    
     @State var metricIndex : Int = 0
     @State var metricOptions = ["mm","cm","m", "km"]
@@ -20,178 +20,204 @@ struct DistanceView: View {
     @State var imperialIndex : Int = 0
     @State var imperialOptions = ["in","Ft","Yd", "Miles"]
     
-    func calcM(){
-        //Metric To Imperial
-        if imperialIn == 0{
-            if metricIndex == 0{ //Millimeters
-                if imperialIndex == 0{ //mm to Inches
-                    imperialTemp = metricIn * 0.039370
-                }
-                if imperialIndex == 1{ //mm to Feet
-                    imperialTemp = (metricIn * 0.039370)/12
-                }
-                if imperialIndex == 2{ //mm to Yards
-                    imperialTemp = ((metricIn * 0.039370)/12)/3
-                }
-                if imperialIndex == 3{ //mm to Miles
-                    imperialTemp = (((metricIn * 0.039370)/12)/3)*0.00056818
-                }
-            }
-            if metricIndex == 1{ //Centimeters
-                if imperialIndex == 0{ //cm to Inches
-                    imperialTemp = metricIn * 0.39370
-                }
-                if imperialIndex == 1{ //cm to Feet
-                    imperialTemp = (metricIn * 0.39370)/12
-                }
-                if imperialIndex == 2{ //cm to Yards
-                    imperialTemp = ((metricIn * 0.39370)/12)/3
-                }
-                if imperialIndex == 3{ //cm to Miles
-                    imperialTemp = (((metricIn * 0.39370)/12)/3)*0.00056818
-                }
-            }
-            if metricIndex == 2{ //Meters
-                if imperialIndex == 0{ //m to Inches
-                    imperialTemp = metricIn * 39.37008
-                }
-                if imperialIndex == 1{ //m toFeet
-                    imperialTemp = (metricIn * 39.37008)/12
-                }
-                if imperialIndex == 2{ //m to Yards
-                    imperialTemp = ((metricIn * 39.37008)/12)/3
-                }
-                if imperialIndex == 3{ //m to Miles
-                    imperialTemp = (((metricIn * 39.37008)/12)/3)*0.00056818
-                }
-            }
-            if metricIndex == 3{ //Kilometers
-                if imperialIndex == 0{ //Km to Inches
-                    imperialTemp = metricIn * 39370.08
-                }
-                if imperialIndex == 1{ // Km to Feet
-                    imperialTemp = (metricIn * 39370.08)/12
-                }
-                if imperialIndex == 2{ //Km to Yards
-                    imperialTemp = ((metricIn * 39370.08)/12)/3
-                }
-                if imperialIndex == 3{ //Km to Miles
-                    imperialTemp = (((metricIn * 39370.08)/12)/3)*0.00056818
-                }
-            }
-        }
+    @State var selectIndex : Int = 0
+    @State var selectOptions = ["Imperial to Metric","Metric to Imperial"]
+    
+    let nf = NumberFormatter()
+    
+    func dts(dub : Double) -> String{
+        let str : String = nf.string(from: (dub as NSNumber))!
+        return str
     }
     
-    func calcI(){
-        //Imperial to Metric
-        if metricIn == 0 {
+    func std(str : String) -> Double{
+        let dub : Double = Double(str) ?? 0
+        return dub
+    }
+    
+    func calc(){
+        if (selectIndex == 0){
+            let imperial : Double = Double(imperialIn ?? 0)
+            //Imperial to Metric
             if imperialIndex == 0{ //Inches
                 if metricIndex == 0{ //Millimeters
-                    metricTemp = imperialIn * 25.4
+                    result = dts(dub: (imperial * 25.4))
                 }
                 if metricIndex == 1{ //Centimeters
-                    metricTemp = imperialIn * 2.54
+                    result = dts(dub: (imperial * 2.54))
                 }
                 if metricIndex == 2{ //Meters
-                    metricTemp = imperialIn * 0.0254
+                    result = dts(dub: (imperial * 0.0254))
                 }
                 if metricIndex == 3{ //Kilometers
-                    metricTemp = imperialIn * 0.0000254
+                    result = dts(dub: (imperial * 0.0000254))
                 }
             }
             if imperialIndex == 1{ //Feet
                 if metricIndex == 0{ //Millimeters
-                    metricTemp = imperialIn * 304.8
+                    result = dts(dub: (imperial * 304.8))
                 }
                 if metricIndex == 1{ //Centimeters
-                    metricTemp = imperialIn * 30.48
+                    result = dts(dub: (imperial * 30.48))
                 }
                 if metricIndex == 2{ //Meters
-                    metricTemp = imperialIn * 0.3048
+                    result = dts(dub: (imperial * 0.3048))
                 }
                 if metricIndex == 3{ //Kilometers
-                     metricTemp = imperialIn * 0.0003048
+                     result = dts(dub: (imperial * 0.0003048))
                 }
             }
             if imperialIndex == 2{ //Yards
                 if metricIndex == 0{ //Millimeters
-                     metricTemp = imperialIn * 914.4
+                     result = dts(dub: (imperial * 914.4))
                 }
                 if metricIndex == 1{ //Centimeters
-                    metricTemp = imperialIn * 91.44
+                    result = dts(dub: (imperial * 91.44))
                 }
                 if metricIndex == 2{ //Meters
-                    metricTemp = imperialIn * 0.9144
+                    result = dts(dub: (imperial * 0.9144))
                 }
                 if metricIndex == 3{ //Kilometers
-                    metricTemp = imperialIn * 0.0009144
+                    result = dts(dub: (imperial * 0.0009144))
                 }
             }
             if imperialIndex == 3{ //Miles
                 if metricIndex == 0{ //Millimeters
-                     metricTemp = imperialIn * 1609344
+                     result = dts(dub: (imperial * 1609344))
                 }
                 if metricIndex == 1{ //Centimeters
-                    metricTemp = imperialIn * 160934.4
+                    result = dts(dub: (imperial * 160934.4))
                 }
                 if metricIndex == 2{ //Meters
-                    metricTemp = imperialIn * 1609.344
+                    result = dts(dub: (imperial * 1609.344))
                 }
                 if metricIndex == 3{ //Kilometers
-                    metricTemp = imperialIn * 1.609344
+                    result = dts(dub: (imperial * 1.609344))
                 }
             }
+            metricIn = std(str: result)
         }
-     }
+        
+        
+        if (selectIndex == 1){
+            let metric: Double = Double(metricIn ?? 0)
+            //Metric To Imperial
+            if metricIndex == 0{ //Millimeters
+                if imperialIndex == 0{ //mm to Inches
+                    result = dts(dub: (metric * 0.039370))
+                }
+                if imperialIndex == 1{ //mm to Feet
+                    result = dts(dub: ((metric * 0.039370)/12))
+                }
+                if imperialIndex == 2{ //mm to Yards
+                    result = dts(dub: (((metric * 0.039370)/12)/3))
+                }
+                if imperialIndex == 3{ //mm to Miles
+                    result = dts(dub: ((((metric * 0.039370)/12)/3)*0.00056818))
+                }
+            }
+            if metricIndex == 1{ //Centimeters
+                if imperialIndex == 0{ //cm to Inches
+                    result = dts(dub: (metric * 0.39370))
+                }
+                if imperialIndex == 1{ //cm to Feet
+                    result = dts(dub: ((metric * 0.39370)/12))
+                }
+                if imperialIndex == 2{ //cm to Yards
+                    result = dts(dub: (((metric * 0.39370)/12)/3))
+                }
+                if imperialIndex == 3{ //cm to Miles
+                    result = dts(dub: ((((metric * 0.39370)/12)/3)*0.00056818))
+                }
+            }
+            if metricIndex == 2{ //Meters
+                if imperialIndex == 0{ //m to Inches
+                    result = dts(dub: (metric * 39.37008))
+                }
+                if imperialIndex == 1{ //m toFeet
+                    result = dts(dub: ((metric * 39.37008)/12))
+                }
+                if imperialIndex == 2{ //m to Yards
+                    result = dts(dub: (((metric * 39.37008)/12)/3))
+                }
+                if imperialIndex == 3{ //m to Miles
+                    result = dts(dub: ((((metric * 39.37008)/12)/3)*0.00056818))
+                }
+            }
+            if metricIndex == 3{ //Kilometers
+                if imperialIndex == 0{ //Km to Inches
+                    result = dts(dub: (metric * 39370.08))
+                }
+                if imperialIndex == 1{ // Km to Feet
+                    result = dts(dub: ((metric * 39370.08)/12))
+                }
+                if imperialIndex == 2{ //Km to Yards
+                    result = dts(dub: (((metric * 39370.08)/12)/3))
+                }
+                if imperialIndex == 3{ //Km to Miles
+                    result = dts(dub: ((((metric * 39370.08)/12)/3)*0.00056818))
+                }
+            }
+            imperialIn = std(str: result)
+        }
+        
+    }
     
     func done(){
         UIApplication.shared.endEditing()
     }
     
     func clear(){
-        imperialIn = 0
-        imperialTemp = 0
-        metricIn = 0
-        metricTemp = 0
+        imperialIn = nil
+        metricIn = nil
+        result = ""
         UIApplication.shared.endEditing()
     }
     
     var body: some View {
+        nf.maximumFractionDigits = 3 //max decimal points, maybe make this a setting?
         
         let metersProxy = Binding<String>(
-            get: { if self.metricTemp == 0{return ""}
-            else{return String(Float(self.metricTemp))} },
-            set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.metricIn = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.metricIn){
-                            self.metricTemp = value.floatValue
-                            self.calcM()//i think this is correct
-                        }
-                    }
-                }
-            }
-        )
-        //Proxy to convert int  entered into a binding string so user does not need to commit with return on the keyboard
-        let imperialProxy = Binding<String>(
             get: {
-                if self.imperialTemp == 0{
+                if (self.metricIn == nil){
                     return ""
                 }
-                else {
-                    return String(Float(self.imperialTemp))
+                else{
+                    return dts(dub: (self.metricIn ?? 0))
                 }
             },
             set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.imperialIn = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.imperialIn){
-                            self.imperialTemp = value.floatValue
-                            self.calcI()//same here i think this is correct
-                        }
-                    }
+                let value = $0
+                if (value == ""){
+                    metricIn = nil
+                    result = ""
+                }
+                else{
+                    self.metricIn = std(str: value)
+                    self.calc()
+                }
+                
+            }
+        )
+        
+        let imperialProxy = Binding<String>(
+            get: {
+                if self.imperialIn == nil{
+                    return ""
+                }
+                else {
+                    return dts(dub: (self.imperialIn ?? 0))
+                }
+            },
+            set: {
+                let value = $0
+                if (value == ""){
+                    imperialIn = nil
+                    result = ""
+                }
+                else{
+                    self.imperialIn = std(str: value)
+                    self.calc()
                 }
             }
         )
@@ -202,37 +228,75 @@ struct DistanceView: View {
             get: { return self.imperialIndex },
             set: {
                 self.imperialIndex = $0
-                self.calcM()//this is fucked
-                self.calcI()//i dont know the order
+                self.calc()
             }
         )
         let metricPProxy = Binding<Int>(
-            get: { return self.metricIndex },
+            get: {
+                return self.metricIndex
+            },
             set: {
                 self.metricIndex = $0
-                self.calcI() //same here
-                self.calcM() //wtf
+                self.calc()
+            }
+        )
+        let selectProxy = Binding<Int>(
+            get:{
+                return self.selectIndex
+            },
+            set:{
+                self.selectIndex = $0
+                self.calc()
             }
         )
         
         return NavigationView{
             Form{
-                Picker("Metric", selection: metricPProxy){
-                    ForEach(0..<metricOptions.count){
-                        Text(self.metricOptions[$0])
+                
+                    Picker("Direction", selection: selectProxy){
+                        ForEach(0..<selectOptions.count){
+                            Text(self.selectOptions[$0])
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                
+                Section{
+                    if (selectIndex == 0){
+                        Picker("Imperial", selection: imperialPProxy){
+                            ForEach(0..<imperialOptions.count){
+                                Text(self.imperialOptions[$0])
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                        TextField("Enter Imperial Distance", text: imperialProxy)
+                    }
+                    if (selectIndex == 1){
+                        Picker("Metric", selection: metricPProxy){
+                            ForEach(0..<metricOptions.count){
+                                Text(self.metricOptions[$0])
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                        TextField("Enter Metric Distance", text: metersProxy)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                TextField("Enter Metric Distance", text: metersProxy)
-                
-                
-                Picker("Imperial", selection: imperialPProxy){
-                    ForEach(0..<imperialOptions.count){
-                        Text(self.imperialOptions[$0])
+                Section{
+                    if (selectIndex == 0){
+                        Picker("Metric", selection: metricPProxy){
+                            ForEach(0..<metricOptions.count){
+                                Text(self.metricOptions[$0])
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                    if (selectIndex == 1){
+                        Picker("Imperial", selection: imperialPProxy){
+                            ForEach(0..<imperialOptions.count){
+                                Text(self.imperialOptions[$0])
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                    HStack{
+                        Text("Result: ")
+                        Text(self.result)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                TextField("Enter Imperial Distance", text: imperialProxy)
             }
             
         .listStyle(GroupedListStyle())

@@ -10,10 +10,9 @@ import SwiftUI
 
 struct TempView: View {
     
-    @State var tempIn: Float = 0.0
-    @State var tempTemp: Float = -0.0001
+    @State var tempIn: Double?
     
-    @State var result: Float = 0.0
+    @State var result: String = ""
     
     @State var inputTIndex : Int = 0
     @State var inputTOptions = ["F","C", "K"]
@@ -21,39 +20,54 @@ struct TempView: View {
     @State var outputTIndex : Int = 1
     @State var outputTOptions = ["F","C", "K"]
     
+    let nf = NumberFormatter()
     
+    func dts(dub : Double) -> String{
+        let str : String = nf.string(from: (dub as NSNumber))!
+        return str
+    }
+    
+    func std(str : String) -> Double{
+        let dub : Double = Double(str) ?? 0
+        return dub
+    }
     
     
     func calc(){
+        if (tempIn == nil){
+            return
+        }
+        let temp : Double = Double(tempIn ?? 0)
+    
         //Fahrenheit
         if inputTIndex == 0{
             //F to F
             if outputTIndex == 0{
-                 result = tempIn
+                result = dts(dub: temp)
             }
             //F to C
             else if outputTIndex == 1{
-                result = (tempIn - 32 ) * (5/9)
+                result = dts(dub: ((temp - 32 ) * (5/9)))
                  
             }
             //F to K
             else if outputTIndex == 2{
-                   result = ((tempIn - 32 )*(5/9)) + 273.15
+                   result = dts(dub: (((temp - 32 )*(5/9)) + 273.15))
             }
         }
         //Celsius
         else if inputTIndex == 1{
             //C to F
             if outputTIndex == 0{
-                 result = (tempIn * 9/5) + 32
+                 result = dts(dub: ((temp * 9/5) + 32))
             }
             //C to C
             else if outputTIndex == 1{
-                 result = tempIn
+                 result = dts(dub: (temp))
             }
             //C to K
             else if outputTIndex == 2{
-                result = tempIn + 273.15
+                result = dts(dub: (temp + 273.15))
                 
             }
         }
@@ -61,15 +75,15 @@ struct TempView: View {
         else if inputTIndex == 2{
             //K to F
             if outputTIndex == 0{
-                 result = ((tempIn - 273.15) * 9/5) + 32
+                 result = dts(dub: (((temp - 273.15) * 9/5) + 32))
             }
             //K to C
             else if outputTIndex == 1{
-                 result = tempIn - 273.15
+                 result = dts(dub: (temp - 273.15))
             }
             //K to K
             else if outputTIndex == 2{
-                 result = tempIn
+                 result = dts(dub: temp)
             }
         }
     }
@@ -79,27 +93,34 @@ struct TempView: View {
     }
     
     func clear(){
-        tempTemp = -0.0001
-        tempIn = 0.0
-        result = 0.0
+        tempIn = nil
+        result = ""
         
         UIApplication.shared.endEditing()
     }
     
     var body: some View {
         
+        nf.maximumFractionDigits = 5 //max decimal points, maybe make this a setting?
+        
         let inProxy = Binding<String>(
-            get: { if self.tempTemp == -0.0001{return ""}
-            else{return String(Float(self.tempTemp))} },
+            get: {
+                if self.tempIn == nil{
+                    return ""
+                }
+                else{
+                    return dts(dub: tempIn ?? 0)
+                }
+            },
             set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.tempIn = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.tempIn){
-                            self.tempTemp = value.floatValue
-                            self.calc()
-                        }
-                    }
+                let txtBxValue = $0
+                if ((txtBxValue == "")){
+                    tempIn = nil
+                    result = ""
+                }
+                else{
+                    self.tempIn = std(str: txtBxValue)
+                    self.calc()
                 }
             }
         )
@@ -119,7 +140,7 @@ struct TempView: View {
         )
          return NavigationView{
             Form{
-                Section{
+                
                     HStack {
                         TextField("Enter Temperature", text: inProxy)
                         Picker("", selection: inputTIndexProxy){
@@ -129,6 +150,8 @@ struct TempView: View {
                         }
                     }
                     .pickerStyle(DefaultPickerStyle())
+                
+                Section{
                     HStack {
                         Text("Result: ")
                         Text(String(result))

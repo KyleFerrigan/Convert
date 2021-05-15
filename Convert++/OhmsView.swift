@@ -213,10 +213,8 @@ struct OhmsView: View {
                     return
                 }
                 else{
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.usrIn = std(str : txtBxValue)
-                        self.calc()
-                    }
+                    self.usrIn = std(str : txtBxValue)
+                    self.calc()
                 }
             }
         )
@@ -242,10 +240,8 @@ struct OhmsView: View {
                     return
                 }
                 else{
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.usr2In = std(str : txtBxValue)
-                        self.calc()
-                    }
+                    self.usr2In = std(str : txtBxValue)
+                    self.calc()
                 }
             }
         )
@@ -268,7 +264,7 @@ struct OhmsView: View {
         return VStack {
             NavigationView{
                 Form{
-                    Section{
+                    
                         HStack(){
                             TextField("Enter first value", text: usrProxy)
                             Picker("", selection: usrIndexProxy){
@@ -285,7 +281,7 @@ struct OhmsView: View {
                                 }
                             }.frame(width: 100.0)
                         }
-                    }
+                    
                     Section{
                         HStack{
                             Text("Amps: ")

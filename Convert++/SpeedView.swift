@@ -11,11 +11,9 @@ import SwiftUI
 struct SpeedView: View {
     
     
-     @State var inputIn : Float = 0.0
-     @State var inputTemp : Float = 0.0
+     @State var speedIn : Double?
     
-     @State var outputTemp : Float = 0.0
-     @State var outputIn : Float = 0.0
+     @State var result : String = ""
     
      @State var inputIndex : Int = 0
      @State var inputOptions = ["mph","km/h", "m/s", "knots"]
@@ -23,66 +21,86 @@ struct SpeedView: View {
      @State var outputIndex : Int = 1
      @State var outputOptions = ["mph","km/h", "m/s", "knots"]
     
+    let nf = NumberFormatter()
+    
+    //double to string
+    func dts(dub : Double) -> String{
+        let str : String = nf.string(from: (dub as NSNumber))!
+        return str
+    }
+    
+    //string to double
+    func std(str : String) -> Double{
+        let dub : Double = Double(str) ?? 0
+        return dub
+    }
+    
     
     func calc(){
+        if (speedIn == nil){
+            return
+        }
+        
+        let speed = Double(speedIn ?? 0)
+        
         if inputIndex == 0{
             if outputIndex == 0{ // mph to mph
-                outputTemp = inputIn
+                result = dts(dub: speed)
             }
             else if outputIndex == 1{ // mph to km/h
-                outputTemp = inputIn * 1.609344
+                result = dts(dub: (speed * 1.609344))
             }
             else if outputIndex == 2{// mph to m/s
-                outputTemp = inputIn * 0.44704
+                result = dts(dub: (speed * 0.44704))
             }
             else if outputIndex == 3{ //mph to knots
-                outputTemp = inputIn * 0.8689758
+                result = dts(dub: (speed * 0.8689758))
             }
             
         }
         else if inputIndex == 1{
             
             if outputIndex == 0{ // km/h to mph
-                outputTemp = inputIn * 0.6213712
+                result = dts(dub: (speed * 0.6213712))
             }
             else if outputIndex == 1{ // km/h to km/h
-                 outputTemp = inputIn
+                 result = dts(dub: speed)
             }
             else if outputIndex == 2{ //km/h to m/s
-                outputTemp = inputIn * 0.2777778
+                result = dts(dub: (speed * 0.2777778))
             }
             else if outputIndex == 3{ //km/h to knots
-                outputTemp = inputIn * 0.5399565
+                result = dts(dub: (speed * 0.5399565))
             }
         }
         else if inputIndex == 2{
             
             if outputIndex == 0{// m/s to mph
-                outputTemp = inputIn * 2.236936
+                result = dts(dub: (speed * 2.236936))
             }
             if outputIndex == 1{ // m/s to km/h
-                outputTemp = inputIn * 3.6
+                result = dts(dub: (speed * 3.6))
             }
             if outputIndex == 2{ // m/s to m/s
-                 outputTemp = inputIn
+                 result = dts(dub: (speed))
             }
             if outputIndex == 3{  // m/s to knots
-                outputTemp = inputIn * 1.943844
+                result = dts(dub: (speed * 1.943844))
             }
         }
         else if inputIndex == 3{ //knots
             
             if outputIndex == 0{ //knots to mph
-                outputTemp = inputIn * 1.15078
+                result = dts(dub: (speed * 1.15078))
             }
             else if outputIndex == 1{ //knots to km/h
-                outputTemp = inputIn * 1.852001
+                result = dts(dub: (speed * 1.852001))
             }
             else if outputIndex == 2{ // knots to m/s
-                outputTemp = inputIn * 0.5144447
+                result = dts(dub: (speed * 0.5144447))
             }
             else if outputIndex == 3{ //knots to knots
-                 outputTemp = inputIn
+                 result = dts(dub: (speed))
             }
         }
     }
@@ -92,27 +110,35 @@ struct SpeedView: View {
     }
     
     func clear(){
-        outputTemp = 0.0
-        outputIn = 0.0
-        inputIn = 0.0
-        inputTemp = 0.0
+        speedIn = nil
+        result = ""
+        
         UIApplication.shared.endEditing()
     }
     
     var body: some View {
         
+        nf.maximumFractionDigits = 3 //max decimal points, maybe make this a setting?
+        
         let metersProxy = Binding<String>(
-            get: { if self.inputTemp == 0{return ""}
-            else{return String(Float(self.inputTemp))} },
+            get: {
+                if speedIn == nil{
+                    return ""
+                }
+                else{
+                return dts(dub: speedIn ?? 0)
+                }
+            },
             set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.inputIn = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.inputIn){
-                            self.inputTemp = value.floatValue
-                            self.calc()
-                        }
-                    }
+                let txtBxValue = $0
+                
+                if txtBxValue == ""{
+                    speedIn = nil
+                    result = ""
+                }
+                else{
+                    speedIn = std(str: txtBxValue)
+                    self.calc()
                 }
             }
         )
@@ -137,7 +163,7 @@ struct SpeedView: View {
         
         return NavigationView{
                 Form{
-                    Section{
+                    
                         HStack{
                             TextField("Enter Speed", text: metersProxy)
                             Picker("", selection: inputIndexProxy){
@@ -147,10 +173,11 @@ struct SpeedView: View {
                             }
                         }
                         .pickerStyle(DefaultPickerStyle())
-                        
+                    
+                    Section{
                         HStack{
                             Text("Result: ")
-                            Text(String(outputTemp))
+                            Text(String(result))
                             Picker("", selection: outputIndexProxy){
                                 ForEach(0..<outputOptions.count) {
                                     Text(self.outputOptions[$0])
