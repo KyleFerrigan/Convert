@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Convert++.xcodeproj">
+      location = "self:/Users/kyleferrigan/Documents/Xcode/Convert/Multi-Converter.xcodeproj">
    </FileRef>
 </Workspace>

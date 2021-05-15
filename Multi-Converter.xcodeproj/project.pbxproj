@@ -24,7 +24,7 @@
 		FD1064B72506717200ECCD2D /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		FD1064B82506717200ECCD2D /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
 		FD1064B92506717200ECCD2D /* OhmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhmsView.swift; sourceTree = "<group>"; };
-		FD4A7FEA246CB517008145CE /* Convert++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD4A7FEA246CB517008145CE /* Multi-Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4A7FED246CB517008145CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4A7FEF246CB517008145CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD4A7FF1246CB517008145CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,7 +32,7 @@
 		FD4A7FF6246CB519008145CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD4A7FF9246CB519008145CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD4A7FFB246CB519008145CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDF8E31A264F5D520032F312 /* Convert++.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Convert++.entitlements"; sourceTree = "<group>"; };
+		FDF8E31A264F5D520032F312 /* Multi-Converter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Multi-Converter.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 		FD4A7FE1246CB517008145CE = {
 			isa = PBXGroup;
 			children = (
-				FD4A7FEC246CB517008145CE /* Convert++ */,
+				FD4A7FEC246CB517008145CE /* Multi-Converter */,
 				FD4A7FEB246CB517008145CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,15 +57,15 @@
 		FD4A7FEB246CB517008145CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD4A7FEA246CB517008145CE /* Convert++.app */,
+				FD4A7FEA246CB517008145CE /* Multi-Converter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FD4A7FEC246CB517008145CE /* Convert++ */ = {
+		FD4A7FEC246CB517008145CE /* Multi-Converter */ = {
 			isa = PBXGroup;
 			children = (
-				FDF8E31A264F5D520032F312 /* Convert++.entitlements */,
+				FDF8E31A264F5D520032F312 /* Multi-Converter.entitlements */,
 				FD1064B82506717200ECCD2D /* DistanceView.swift */,
 				FD1064B92506717200ECCD2D /* OhmsView.swift */,
 				FD1064B62506717200ECCD2D /* SpeedView.swift */,
@@ -78,7 +78,7 @@
 				FD4A7FFB246CB519008145CE /* Info.plist */,
 				FD4A7FF5246CB519008145CE /* Preview Content */,
 			);
-			path = "Convert++";
+			path = "Multi-Converter";
 			sourceTree = "<group>";
 		};
 		FD4A7FF5246CB519008145CE /* Preview Content */ = {
@@ -92,9 +92,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD4A7FE9246CB517008145CE /* Convert++ */ = {
+		FD4A7FE9246CB517008145CE /* Multi-Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD4A7FFE246CB519008145CE /* Build configuration list for PBXNativeTarget "Convert++" */;
+			buildConfigurationList = FD4A7FFE246CB519008145CE /* Build configuration list for PBXNativeTarget "Multi-Converter" */;
 			buildPhases = (
 				FD4A7FE6246CB517008145CE /* Sources */,
 				FD4A7FE7246CB517008145CE /* Frameworks */,
@@ -104,9 +104,9 @@
 			);
 			dependencies = (
 			);
-			name = "Convert++";
+			name = "Multi-Converter";
 			productName = "Convert++";
-			productReference = FD4A7FEA246CB517008145CE /* Convert++.app */;
+			productReference = FD4A7FEA246CB517008145CE /* Multi-Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,7 +124,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FD4A7FE5246CB517008145CE /* Build configuration list for PBXProject "Convert++" */;
+			buildConfigurationList = FD4A7FE5246CB517008145CE /* Build configuration list for PBXProject "Multi-Converter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -137,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD4A7FE9246CB517008145CE /* Convert++ */,
+				FD4A7FE9246CB517008145CE /* Multi-Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -306,13 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Convert++/Convert++.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Multi-Converter/Multi-Converter.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Convert++/Info.plist";
+				INFOPLIST_FILE = "Multi-Converter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,13 +332,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Convert++/Convert++.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Multi-Converter/Multi-Converter.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Convert++/Info.plist";
+				INFOPLIST_FILE = "Multi-Converter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -357,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD4A7FE5246CB517008145CE /* Build configuration list for PBXProject "Convert++" */ = {
+		FD4A7FE5246CB517008145CE /* Build configuration list for PBXProject "Multi-Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD4A7FFC246CB519008145CE /* Debug */,
@@ -366,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD4A7FFE246CB519008145CE /* Build configuration list for PBXNativeTarget "Convert++" */ = {
+		FD4A7FFE246CB519008145CE /* Build configuration list for PBXNativeTarget "Multi-Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD4A7FFF246CB519008145CE /* Debug */,
