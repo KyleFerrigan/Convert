@@ -2,7 +2,7 @@
 //  OhmsView.swift
 //  Convert++
 //
-//  Created by Kyle Ferrigan on 5/13/20.
+//  Created by Kyle Ferrigan on 7/8/20.
 //  Copyright © 2020 Kyle Ferrigan. All rights reserved.
 //
 
@@ -10,177 +10,306 @@ import SwiftUI
 
 struct OhmsView: View {
     
-    @State var ampsin : Float = 0.0
-    @State var ampstemp : Float = 0.0
-    @State var voltsin : Float = 0.0
-    @State var voltstemp : Float = 0.0
-    @State var ohmsin : Float = 0.0
-    @State var ohmstemp : Float = 0.0
-    @State var wattsin : Float = 0.0
-    @State var wattstemp : Float = 0.0
+    //1st TextField input
+    @State var usrIn : Double?
     
+    //2nd TextField input
+    @State var usr2In : Double?
+    
+    //1st Picker Variables
+    @State var usrIndex : Int = 0
+    @State var usrOptions = ["Amps","Volts","Ohms", "Watts"]
+    
+    //2nd Picker Variables
+    @State var usr2Index : Int = 1
+    @State var usr2Options = ["Amps","Volts","Ohms", "Watts"]
+    
+    //Output Variables
+    @State var ampsOut : String = ""
+    @State var voltsOut : String = ""
+    @State var ohmsOut : String = ""
+    @State var wattsOut : String = ""
+    
+    let nf = NumberFormatter()
+	
+	func dts(dub : Double) -> String{//Double to string TODO replace all existing functions with this
+		let str : String = nf.string(from: (dub as NSNumber))!
+		return str
+	}
+	
+	func std(str : String) -> Double{//String to double TODO replace all other functions with this
+		let dub : Double = Double(str)!
+        return dub
+	}
     
     func calc(){
-            //AMPS
-            if (self.ampsin == 0.0){
-                if(self.wattsin == 0.0){
-                    self.ampstemp = self.voltsin/self.ohmsin
-                }
-                if(self.voltsin == 0.0){
-                    self.ampstemp = (self.wattsin/self.ohmsin).squareRoot()
-                }
-                if(self.ohmsin == 0.0){
-                    self.ampstemp = self.wattsin/self.voltsin
-                }
+		
+		//if either input is blank do not compute
+		if ((usrIn == nil) || (usr2In == nil)){
+            return
+    	}
+		
+		
+        //AMPS as input
+        if (self.usrIndex == 0){
+            let amps = Double(usrIn!)
+            ampsOut = dts(dub: amps)
+			
+            //Calculate Ohms & Watts
+            if (self.usr2Index == 1){
+                let volts = Double(usr2In!) //Convert from Double? to Double
+                voltsOut = dts(dub: volts)
+                ohmsOut = dts(dub: (volts / amps))
+                wattsOut = dts(dub: (volts * amps))
             }
+			
+            //Calculate Volts & Watts
+            else if (self.usr2Index == 2){
+                let ohms = Double(usr2In!)
+                ohmsOut = dts(dub: ohms)
+                voltsOut = dts(dub: (amps * ohms))
+                wattsOut = dts(dub: (pow(amps,2) * ohms))
+            }
+			
+            //Calculate Volts & Ohms
+            else if (self.usr2Index == 3){
+                let watts = Double(usr2In!)
+                wattsOut = dts(dub : watts)
+                voltsOut = dts(dub: (watts / amps))
+                ohmsOut = dts(dub: (watts / pow(amps,2)))
+            }
+        }
+
+        //VOLTAGE as input
+        else if (self.usrIndex == 1){
+            let volts = Double(usrIn!)
+            voltsOut = dts(dub: volts)
+			
+            //Calculate Ohms & Watts
+            if (self.usr2Index == 0){
+                let amps = Double(usr2In!)
+                ampsOut = dts(dub: amps)
+                ohmsOut = dts(dub: (volts / amps))
+                wattsOut = dts(dub: (volts * amps))
+            }
+			
+            //Calculate Amps & Watts
+            else if (self.usr2Index == 2){
+                let ohms = Double(usr2In!)
+                ohmsOut = dts(dub: (ohms))
+                ampsOut = dts(dub: (volts/ohms))
+                wattsOut = dts(dub: (pow(volts,2) / ohms))
+            }
+			
+            //Calculate Amps & Ohms
+            else if (self.usr2Index == 3){
+                let watts = Double(usr2In!)
+                wattsOut = dts(dub: watts)
+                ampsOut = dts(dub: (watts / volts))
+                ohmsOut = dts(dub: (pow(volts,2) / watts))
+            }
+        }
+        /*//stopped here
+        //RESISTANCE as input
+        else if (self.usrIndex == 2 ){
+			let ohms = usrIn
+			ohmsOut = ohms
+			
+            //Calculate Volts & Watts
+            if (self.usr2Index == 0){
+                let amps = usr2In
+				ampsOut = amps
+                voltsOut = amps * ohms
+                wattsOut = pow(amps,2) * ohms
+            }
+			
+            //Calculate Amps & Watts
+            else if (self.usr2Index == 1){
+                let volts = usr2In
+                voltsOut = volts
+                ampsOut = volts/ohms
+                wattsOut = pow(volts,2) / ohms
+            }
+			
+            //Calculate Amps & Volts
+            else if (self.usr2Index == 3){
+                let watts = usr2In
+                wattsOut = watts
+                ampsout = pow((watts / ohms), 0.5)
+                voltsout = pow((watts * ohms), 0.5)
+            }
+        }
         
-            //RESISTANCE
-            if (self.ohmsin == 0.0){
-                //Amps & Volts
-                if(self.wattsin == 0.0){
-                    self.ohmstemp = self.voltsin/self.ampsin
-                }
-                //Watts & Amps
-                if(self.voltsin == 0.0){
-                    self.ohmstemp = self.wattsin/(pow(self.ampsin, 2))
-                }
-                //Watts & Volts
-                if(self.ampsin == 0.0){
-                    self.ohmstemp = (pow(self.voltsin, 2.0))/self.wattsin
-                }
+        //POWER
+        else if (self.usrIndex == 3){
+			let watts = usrIn
+			wattsOut = watts
+			
+            //Calculate Volts & Ohms
+            if (self.usr2Index == 0){
+                let amps = usr2In
+                ampsOut = amps
+                voltsOut = watts / amps
+                ohmsOut = watts / pow(amps,2)
             }
-        
-            //VOLTAGE
-            if (self.voltsin == 0.0){
-                if(self.wattsin == 0.0){
-                    self.voltstemp = self.ampsin*self.ohmsin
-                }
-                if(self.ampsin == 0.0){
-                    self.voltstemp = (self.wattsin*self.ohmsin).squareRoot()
-                }
-                if(self.ohmsin == 0.0){
-                    self.voltstemp = self.wattsin/self.ampsin
-                }
+			
+            //Calculate Amps & Ohms
+            else if (self.usr2Index == 1){
+                let volts = usr2In
+                voltsOut = volts
+                ampsOut = watts / volts
+                ohmsOut = pow(volts,2) / watts
             }
-        
-            //POWER
-            if (self.wattsin == 0.0){
-                if(self.ampsin == 0.0){
-                    self.wattstemp = pow(self.voltsin,2)/self.ohmsin
-                }
-                else if(self.voltsin == 0.0){
-                    self.wattstemp = pow(self.ampsin, 2)/self.ohmsin
-                }
-                else if(self.ohmsin == 0.0){
-                    self.wattstemp = self.voltsin*self.ampsin
-                }
+			
+            //Calculate Amps & Volts
+            else if (self.usr2Index == 2){
+                let ohms = usr2In
+                ohmsOut = ohms
+                ampsOut = pow((watts / ohms), 0.5)
+                voltsOut = pow((watts * ohms), 0.5)
             }
+        }*/
+    }
+    
+    func done(){
         UIApplication.shared.endEditing()
     }
+    
     func clear(){
-        ampstemp = 0
-        ampsin = 0
-        voltstemp = 0
-        voltsin = 0
-        ohmstemp = 0
-        ohmsin = 0
-        wattstemp = 0
-        wattsin = 0
+        usrIn = nil
+        usr2In = nil
+        
+        ampsOut = ""
+        voltsOut = ""
+        ohmsOut = ""
+        wattsOut = ""
+        
         UIApplication.shared.endEditing()
     }
     
     var body: some View {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 5
         
-        //Set varibale after checking if new variable is different
-        let ampsProxy = Binding<String>(
-            get: { if self.ampstemp == 0{return ""}
-            else{return String(Float(self.ampstemp))} },
+        nf.maximumFractionDigits = 10 //max decimal points, maybe make this a setting?
+        
+        //First user input
+        let usrProxy = Binding<String>(
+            get: {
+                if (usrIn == nil){
+                    return ""
+                }
+                else{
+                    return dts(dub: (usrIn!))
+                }
+            },
             set: {
-                if let value = numberFormatter.number(from: $0) {//converts string to Float value
-                        self.ampsin = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            if value.floatValue == self.ampsin{
-                                self.ampstemp = value.floatValue
-                            
-                        }
+                let txtBxValue = $0 //if text box empty reset text fields
+                if txtBxValue == ""{
+                    usrIn = nil;
+                    ampsOut = ""
+                    voltsOut = ""
+                    ohmsOut = ""
+                    wattsOut = ""
+                    return
+                }
+                else{
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.usrIn = std(str : txtBxValue)
+                        self.calc()
                     }
                 }
             }
         )
         
-        let voltsProxy = Binding<String>(
-            get: { if self.voltstemp == 0{return ""}
-            else{return String(Float(self.voltstemp))} },
+        //Second user input
+        let usr2Proxy = Binding<String>(
+            get: {
+                if (usr2In == nil){
+                    return ""
+                }
+                else{
+                    return dts(dub: (usr2In!))
+                }
+            },
             set: {
-                if let value = numberFormatter.number(from: $0) {
-                    self.voltsin = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if value.floatValue == self.voltsin{
-                            self.voltstemp = value.floatValue
-                        }
+                let txtBxValue = $0
+                if txtBxValue == ""{ //if text box empty reset text fields
+                    usr2In = nil;
+                    ampsOut = ""
+                    voltsOut = ""
+                    ohmsOut = ""
+                    wattsOut = ""
+                    return
+                }
+                else{
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.usr2In = std(str : txtBxValue)
+                        self.calc()
                     }
                 }
             }
         )
         
-        let ohmsProxy = Binding<String>(
-            get: { if self.ohmstemp == 0{return ""}
-                else{return String(Float(self.ohmstemp))} },
+        let usrIndexProxy = Binding<Int>(
+            get: {return self.usrIndex},
             set: {
-                if let value = numberFormatter.number(from: $0) {
-                    self.ohmsin = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.ohmsin){
-                            self.ohmstemp = value.floatValue
-                        }
-                    }
-                }
+                self.usrIndex = $0
+                self.calc()
             }
         )
         
-        let wattsProxy = Binding<String>(
-            get: { if self.wattstemp == 0{return ""}
-            else{return String(Float(self.wattstemp))} },
+        let usr2IndexProxy = Binding<Int>(
+            get: {return self.usr2Index},
             set: {
-                if let value = NumberFormatter().number(from: $0) {
-                    self.wattsin = value.floatValue
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        if (value.floatValue == self.wattsin){
-                            self.wattstemp = value.floatValue
-                        }
-                    }
-                }
+                self.usr2Index = $0
+                self.calc()
             }
         )
-        
+        //TODO make it so the textfield takes up 75% or so so its more easily clickable
         return VStack {
             NavigationView{
                 Form{
-                    HStack{
-                        Text("Amps: ")
-                        TextField("Enter Amps", text: ampsProxy)
+                    Section{
+                        HStack{
+                            TextField("Enter first value", text: usrProxy)
+                            Picker("", selection: usrIndexProxy){
+                                ForEach(0..<usrOptions.count) {
+                                    Text(self.usrOptions[$0])
+                                }
+                            }
+                        }
+                        HStack{
+                            TextField("Enter second value", text: usr2Proxy)
+                            Picker("", selection: usr2IndexProxy){
+                                ForEach(0..<usr2Options.count) {
+                                    Text(self.usr2Options[$0])
+                                }
+                            }
+                        }
+                    }
+                    Section{
+                        HStack{
+                            Text("Amps: ")
+                            Text(ampsOut)
+                        }
                         
+                        HStack{
+                            Text("Volts:  ")
+                            Text(voltsOut)
+                        }
+                        
+                        HStack{
+                            Text("Ohms: ")
+                            Text(ohmsOut)
+                        }
+                        
+                        HStack{
+                            Text("Watts: ")
+                            Text(wattsOut)
+                        }
                     }
-                    
-                    HStack{
-                        Text("Volts:  ")
-                        TextField("Enter Volts", text: voltsProxy)
-                    }
-                    HStack{
-                        Text("Ohms: ")
-                        TextField("Enter Ohms", text: ohmsProxy)
-                    }
-                    HStack{
-                        Text("Watts: ")
-                        TextField("Enter Watts", text: wattsProxy)
-                    }
-            
                 }
                 .navigationBarTitle((Text("Ohm's Law Calculator")), displayMode: .inline)
-                .navigationBarItems(leading: Button(action: {self.clear()}) {Text("Clear")}, trailing: Button(action: {self.calc()}) {Text("Calculate")})
+                .navigationBarItems(leading: Button(action: {self.clear()}) {Text("Clear")}, trailing: Button(action: {self.done()}) {Text("Done")})
                 .keyboardType(.decimalPad)
             }.navigationViewStyle(StackNavigationViewStyle())
         }

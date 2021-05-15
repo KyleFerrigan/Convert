@@ -20,7 +20,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            OhmsViewRedux()
+            OhmsView()
             .tabItem {
                 VStack {
                     Image(systemName: "function")
@@ -60,8 +60,10 @@ struct ContentView: View {
 }
 
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
