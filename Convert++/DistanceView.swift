@@ -37,128 +37,132 @@ struct DistanceView: View {
     
     func calc(){
         if (selectIndex == 0){
-            let imperial : Double = Double(imperialIn ?? 0)
-            //Imperial to Metric
-            if imperialIndex == 0{ //Inches
-                if metricIndex == 0{ //Millimeters
-                    result = dts(dub: (imperial * 25.4))
+            if (imperialIn != nil){
+                let imperial : Double = Double(imperialIn ?? 0)
+                //Imperial to Metric
+                if imperialIndex == 0{ //Inches
+                    if metricIndex == 0{ //Millimeters
+                        result = dts(dub: (imperial * 25.4))
+                    }
+                    if metricIndex == 1{ //Centimeters
+                        result = dts(dub: (imperial * 2.54))
+                    }
+                    if metricIndex == 2{ //Meters
+                        result = dts(dub: (imperial * 0.0254))
+                    }
+                    if metricIndex == 3{ //Kilometers
+                        result = dts(dub: (imperial * 0.0000254))
+                    }
                 }
-                if metricIndex == 1{ //Centimeters
-                    result = dts(dub: (imperial * 2.54))
+                if imperialIndex == 1{ //Feet
+                    if metricIndex == 0{ //Millimeters
+                        result = dts(dub: (imperial * 304.8))
+                    }
+                    if metricIndex == 1{ //Centimeters
+                        result = dts(dub: (imperial * 30.48))
+                    }
+                    if metricIndex == 2{ //Meters
+                        result = dts(dub: (imperial * 0.3048))
+                    }
+                    if metricIndex == 3{ //Kilometers
+                         result = dts(dub: (imperial * 0.0003048))
+                    }
                 }
-                if metricIndex == 2{ //Meters
-                    result = dts(dub: (imperial * 0.0254))
+                if imperialIndex == 2{ //Yards
+                    if metricIndex == 0{ //Millimeters
+                         result = dts(dub: (imperial * 914.4))
+                    }
+                    if metricIndex == 1{ //Centimeters
+                        result = dts(dub: (imperial * 91.44))
+                    }
+                    if metricIndex == 2{ //Meters
+                        result = dts(dub: (imperial * 0.9144))
+                    }
+                    if metricIndex == 3{ //Kilometers
+                        result = dts(dub: (imperial * 0.0009144))
+                    }
                 }
-                if metricIndex == 3{ //Kilometers
-                    result = dts(dub: (imperial * 0.0000254))
+                if imperialIndex == 3{ //Miles
+                    if metricIndex == 0{ //Millimeters
+                         result = dts(dub: (imperial * 1609344))
+                    }
+                    if metricIndex == 1{ //Centimeters
+                        result = dts(dub: (imperial * 160934.4))
+                    }
+                    if metricIndex == 2{ //Meters
+                        result = dts(dub: (imperial * 1609.344))
+                    }
+                    if metricIndex == 3{ //Kilometers
+                        result = dts(dub: (imperial * 1.609344))
+                    }
                 }
+                metricIn = std(str: result)
             }
-            if imperialIndex == 1{ //Feet
-                if metricIndex == 0{ //Millimeters
-                    result = dts(dub: (imperial * 304.8))
-                }
-                if metricIndex == 1{ //Centimeters
-                    result = dts(dub: (imperial * 30.48))
-                }
-                if metricIndex == 2{ //Meters
-                    result = dts(dub: (imperial * 0.3048))
-                }
-                if metricIndex == 3{ //Kilometers
-                     result = dts(dub: (imperial * 0.0003048))
-                }
-            }
-            if imperialIndex == 2{ //Yards
-                if metricIndex == 0{ //Millimeters
-                     result = dts(dub: (imperial * 914.4))
-                }
-                if metricIndex == 1{ //Centimeters
-                    result = dts(dub: (imperial * 91.44))
-                }
-                if metricIndex == 2{ //Meters
-                    result = dts(dub: (imperial * 0.9144))
-                }
-                if metricIndex == 3{ //Kilometers
-                    result = dts(dub: (imperial * 0.0009144))
-                }
-            }
-            if imperialIndex == 3{ //Miles
-                if metricIndex == 0{ //Millimeters
-                     result = dts(dub: (imperial * 1609344))
-                }
-                if metricIndex == 1{ //Centimeters
-                    result = dts(dub: (imperial * 160934.4))
-                }
-                if metricIndex == 2{ //Meters
-                    result = dts(dub: (imperial * 1609.344))
-                }
-                if metricIndex == 3{ //Kilometers
-                    result = dts(dub: (imperial * 1.609344))
-                }
-            }
-            metricIn = std(str: result)
         }
         
         
         if (selectIndex == 1){
-            let metric: Double = Double(metricIn ?? 0)
-            //Metric To Imperial
-            if metricIndex == 0{ //Millimeters
-                if imperialIndex == 0{ //mm to Inches
-                    result = dts(dub: (metric * 0.039370))
+            if (metricIn != nil){
+                let metric: Double = Double(metricIn ?? 0)
+                //Metric To Imperial
+                if metricIndex == 0{ //Millimeters
+                    if imperialIndex == 0{ //mm to Inches
+                        result = dts(dub: (metric * 0.039370))
+                    }
+                    if imperialIndex == 1{ //mm to Feet
+                        result = dts(dub: ((metric * 0.039370)/12))
+                    }
+                    if imperialIndex == 2{ //mm to Yards
+                        result = dts(dub: (((metric * 0.039370)/12)/3))
+                    }
+                    if imperialIndex == 3{ //mm to Miles
+                        result = dts(dub: ((((metric * 0.039370)/12)/3)*0.00056818))
+                    }
                 }
-                if imperialIndex == 1{ //mm to Feet
-                    result = dts(dub: ((metric * 0.039370)/12))
+                if metricIndex == 1{ //Centimeters
+                    if imperialIndex == 0{ //cm to Inches
+                        result = dts(dub: (metric * 0.39370))
+                    }
+                    if imperialIndex == 1{ //cm to Feet
+                        result = dts(dub: ((metric * 0.39370)/12))
+                    }
+                    if imperialIndex == 2{ //cm to Yards
+                        result = dts(dub: (((metric * 0.39370)/12)/3))
+                    }
+                    if imperialIndex == 3{ //cm to Miles
+                        result = dts(dub: ((((metric * 0.39370)/12)/3)*0.00056818))
+                    }
                 }
-                if imperialIndex == 2{ //mm to Yards
-                    result = dts(dub: (((metric * 0.039370)/12)/3))
+                if metricIndex == 2{ //Meters
+                    if imperialIndex == 0{ //m to Inches
+                        result = dts(dub: (metric * 39.37008))
+                    }
+                    if imperialIndex == 1{ //m toFeet
+                        result = dts(dub: ((metric * 39.37008)/12))
+                    }
+                    if imperialIndex == 2{ //m to Yards
+                        result = dts(dub: (((metric * 39.37008)/12)/3))
+                    }
+                    if imperialIndex == 3{ //m to Miles
+                        result = dts(dub: ((((metric * 39.37008)/12)/3)*0.00056818))
+                    }
                 }
-                if imperialIndex == 3{ //mm to Miles
-                    result = dts(dub: ((((metric * 0.039370)/12)/3)*0.00056818))
+                if metricIndex == 3{ //Kilometers
+                    if imperialIndex == 0{ //Km to Inches
+                        result = dts(dub: (metric * 39370.08))
+                    }
+                    if imperialIndex == 1{ // Km to Feet
+                        result = dts(dub: ((metric * 39370.08)/12))
+                    }
+                    if imperialIndex == 2{ //Km to Yards
+                        result = dts(dub: (((metric * 39370.08)/12)/3))
+                    }
+                    if imperialIndex == 3{ //Km to Miles
+                        result = dts(dub: ((((metric * 39370.08)/12)/3)*0.00056818))
+                    }
                 }
+                imperialIn = std(str: result)
             }
-            if metricIndex == 1{ //Centimeters
-                if imperialIndex == 0{ //cm to Inches
-                    result = dts(dub: (metric * 0.39370))
-                }
-                if imperialIndex == 1{ //cm to Feet
-                    result = dts(dub: ((metric * 0.39370)/12))
-                }
-                if imperialIndex == 2{ //cm to Yards
-                    result = dts(dub: (((metric * 0.39370)/12)/3))
-                }
-                if imperialIndex == 3{ //cm to Miles
-                    result = dts(dub: ((((metric * 0.39370)/12)/3)*0.00056818))
-                }
-            }
-            if metricIndex == 2{ //Meters
-                if imperialIndex == 0{ //m to Inches
-                    result = dts(dub: (metric * 39.37008))
-                }
-                if imperialIndex == 1{ //m toFeet
-                    result = dts(dub: ((metric * 39.37008)/12))
-                }
-                if imperialIndex == 2{ //m to Yards
-                    result = dts(dub: (((metric * 39.37008)/12)/3))
-                }
-                if imperialIndex == 3{ //m to Miles
-                    result = dts(dub: ((((metric * 39.37008)/12)/3)*0.00056818))
-                }
-            }
-            if metricIndex == 3{ //Kilometers
-                if imperialIndex == 0{ //Km to Inches
-                    result = dts(dub: (metric * 39370.08))
-                }
-                if imperialIndex == 1{ // Km to Feet
-                    result = dts(dub: ((metric * 39370.08)/12))
-                }
-                if imperialIndex == 2{ //Km to Yards
-                    result = dts(dub: (((metric * 39370.08)/12)/3))
-                }
-                if imperialIndex == 3{ //Km to Miles
-                    result = dts(dub: ((((metric * 39370.08)/12)/3)*0.00056818))
-                }
-            }
-            imperialIn = std(str: result)
         }
         
     }

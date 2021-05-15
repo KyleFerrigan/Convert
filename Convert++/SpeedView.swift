@@ -164,27 +164,24 @@ struct SpeedView: View {
         return NavigationView{
                 Form{
                     
-                        HStack{
-                            TextField("Enter Speed", text: metersProxy)
-                            Picker("", selection: inputIndexProxy){
-                                ForEach(0..<inputOptions.count) {
-                                    Text(self.inputOptions[$0])
-                                }
-                            }
+                    Picker("", selection: inputIndexProxy){
+                        ForEach(0..<inputOptions.count) {
+                            Text(self.inputOptions[$0])
                         }
-                        .pickerStyle(DefaultPickerStyle())
+                    }.pickerStyle(SegmentedPickerStyle())
+                    TextField("Enter Speed", text: metersProxy)
                     
                     Section{
+                        Picker("", selection: outputIndexProxy){
+                            ForEach(0..<outputOptions.count) {
+                                Text(self.outputOptions[$0])
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
                         HStack{
                             Text("Result: ")
                             Text(String(result))
-                            Picker("", selection: outputIndexProxy){
-                                ForEach(0..<outputOptions.count) {
-                                    Text(self.outputOptions[$0])
-                                }
-                            }
+                            
                         }
-                        .pickerStyle(DefaultPickerStyle())
                     }
                 }
             .navigationBarTitle((Text("Speed Converter")), displayMode: .inline)

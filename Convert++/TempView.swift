@@ -140,28 +140,25 @@ struct TempView: View {
         )
          return NavigationView{
             Form{
-                
-                    HStack {
-                        TextField("Enter Temperature", text: inProxy)
-                        Picker("", selection: inputTIndexProxy){
-                            ForEach(0..<inputTOptions.count) {
-                                Text(self.inputTOptions[$0])
-                            }
-                        }
+                Picker("", selection: inputTIndexProxy){
+                    ForEach(0..<inputTOptions.count) {
+                        Text(self.inputTOptions[$0])
                     }
-                    .pickerStyle(DefaultPickerStyle())
+                }.pickerStyle(SegmentedPickerStyle())
+                TextField("Enter Temperature", text: inProxy)
+                
                 
                 Section{
+                    Picker("", selection: outputTIndexProxy){
+                        ForEach(0..<outputTOptions.count) {
+                        Text(self.outputTOptions[$0])
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
                     HStack {
                         Text("Result: ")
                         Text(String(result))
-                        Picker("", selection: outputTIndexProxy){
-                            ForEach(0..<outputTOptions.count) {
-                            Text(self.outputTOptions[$0])
-                            }
-                        }
+                        
                     }
-                    .pickerStyle(DefaultPickerStyle())
                 }
             }
         .keyboardType(.decimalPad)
