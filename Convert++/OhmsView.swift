@@ -32,13 +32,14 @@ struct OhmsView: View {
     
     let nf = NumberFormatter()
 	
-	func dts(dub : Double) -> String{//Double to string TODO replace all existing functions with this
+	func dts(dub : Double) -> String{
 		let str : String = nf.string(from: (dub as NSNumber))!
 		return str
 	}
 	
-	func std(str : String) -> Double{//String to double TODO replace all other functions with this
-		let dub : Double = Double(str)!
+	func std(str : String) -> Double{
+        
+        let dub : Double = Double(str) ?? 0
         return dub
 	}
     
@@ -109,66 +110,66 @@ struct OhmsView: View {
                 ohmsOut = dts(dub: (pow(volts,2) / watts))
             }
         }
-        /*//stopped here
+        
         //RESISTANCE as input
         else if (self.usrIndex == 2 ){
-			let ohms = usrIn
-			ohmsOut = ohms
+			let ohms = Double(usrIn!)
+            ohmsOut = dts(dub: ohms)
 			
             //Calculate Volts & Watts
             if (self.usr2Index == 0){
-                let amps = usr2In
-				ampsOut = amps
-                voltsOut = amps * ohms
-                wattsOut = pow(amps,2) * ohms
+                let amps = Double(usr2In!)
+				ampsOut = dts(dub: amps)
+                voltsOut = dts(dub: (amps * ohms))
+                wattsOut = dts(dub: (pow(amps,2) * ohms))
             }
 			
             //Calculate Amps & Watts
             else if (self.usr2Index == 1){
-                let volts = usr2In
-                voltsOut = volts
-                ampsOut = volts/ohms
-                wattsOut = pow(volts,2) / ohms
+                let volts = Double(usr2In!)
+                voltsOut = dts(dub: volts)
+                ampsOut = dts(dub: (volts/ohms))
+                wattsOut = dts(dub: (pow(volts,2) / ohms))
             }
 			
             //Calculate Amps & Volts
             else if (self.usr2Index == 3){
-                let watts = usr2In
-                wattsOut = watts
-                ampsout = pow((watts / ohms), 0.5)
-                voltsout = pow((watts * ohms), 0.5)
+                let watts = Double(usr2In!)
+                wattsOut = dts(dub: watts)
+                ampsOut = dts(dub: pow((watts / ohms), 0.5))
+                voltsOut = dts(dub: pow((watts * ohms), 0.5))
             }
         }
         
         //POWER
         else if (self.usrIndex == 3){
-			let watts = usrIn
-			wattsOut = watts
+			let watts = Double(usrIn!)
+			wattsOut = dts(dub: watts)
 			
             //Calculate Volts & Ohms
             if (self.usr2Index == 0){
-                let amps = usr2In
-                ampsOut = amps
-                voltsOut = watts / amps
-                ohmsOut = watts / pow(amps,2)
+                let amps = Double(usr2In!)
+                ampsOut = dts(dub: amps)
+                voltsOut = dts(dub: (watts / amps))
+                ohmsOut = dts(dub:(watts / pow(amps,2)))
             }
 			
             //Calculate Amps & Ohms
             else if (self.usr2Index == 1){
-                let volts = usr2In
-                voltsOut = volts
-                ampsOut = watts / volts
-                ohmsOut = pow(volts,2) / watts
+                let volts = Double(usr2In!)
+                voltsOut = dts(dub: volts)
+                ampsOut = dts(dub: (watts / volts))
+                ohmsOut = dts(dub: (pow(volts,2) / watts))
             }
 			
             //Calculate Amps & Volts
             else if (self.usr2Index == 2){
-                let ohms = usr2In
-                ohmsOut = ohms
-                ampsOut = pow((watts / ohms), 0.5)
-                voltsOut = pow((watts * ohms), 0.5)
+                let ohms = Double(usr2In!)
+                ohmsOut = dts(dub: ohms)
+                ampsOut = dts(dub: (pow((watts / ohms), 0.5)))
+                voltsOut = dts(dub: (pow((watts * ohms), 0.5)))
             }
-        }*/
+        }
     }
     
     func done(){
@@ -264,18 +265,17 @@ struct OhmsView: View {
                 self.calc()
             }
         )
-        //TODO make it so the textfield takes up 75% or so so its more easily clickable
         return VStack {
             NavigationView{
                 Form{
                     Section{
-                        HStack{
+                        HStack(){
                             TextField("Enter first value", text: usrProxy)
                             Picker("", selection: usrIndexProxy){
                                 ForEach(0..<usrOptions.count) {
                                     Text(self.usrOptions[$0])
                                 }
-                            }
+                            }.frame(width: 100.0)
                         }
                         HStack{
                             TextField("Enter second value", text: usr2Proxy)
@@ -283,7 +283,7 @@ struct OhmsView: View {
                                 ForEach(0..<usr2Options.count) {
                                     Text(self.usr2Options[$0])
                                 }
-                            }
+                            }.frame(width: 100.0)
                         }
                     }
                     Section{
