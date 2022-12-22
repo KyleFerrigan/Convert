@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C56DC0B28DA6EA000A16E3A /* Multi_ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */; };
+		9C56DC1228DA6EA100A16E3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */; };
+		9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1828DA6EB400A16E3A /* SpeedView.swift */; };
+		9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */; };
+		9C56DC1F28DA6EE200A16E3A /* OhmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */; };
+		9C56DC2328DA6F1100A16E3A /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC2228DA6F1100A16E3A /* TempView.swift */; };
+		9C56DC2928DA70F600A16E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C56DC2828DA70F600A16E3A /* Assets.xcassets */; };
+		9C56DC2B28DA70FB00A16E3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC2A28DA70FB00A16E3A /* ContentView.swift */; };
+		9C5CFC732953DA8A001E37C0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5CFC722953DA8A001E37C0 /* Utilities.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9C56DC0728DA6EA000A16E3A /* Multi-Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-Convert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_ConvertApp.swift; sourceTree = "<group>"; };
+		9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9C56DC1828DA6EB400A16E3A /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
+		9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhmsView.swift; sourceTree = "<group>"; };
+		9C56DC2228DA6F1100A16E3A /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		9C56DC2828DA70F600A16E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C56DC2A28DA70FB00A16E3A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9C5CFC722953DA8A001E37C0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		9C5CFC742953FA7C001E37C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5CFC7529540403001E37C0 /* Multi-Convert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Multi-Convert.entitlements"; path = "MacOS/Multi-Convert.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C56DC0428DA6EA000A16E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C56DBFE28DA6EA000A16E3A = {
+			isa = PBXGroup;
+			children = (
+				9C56DC0928DA6EA000A16E3A /* Multi-Convert */,
+				9C56DC0828DA6EA000A16E3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C56DC0828DA6EA000A16E3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C56DC0728DA6EA000A16E3A /* Multi-Convert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C56DC0928DA6EA000A16E3A /* Multi-Convert */ = {
+			isa = PBXGroup;
+			children = (
+				9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */,
+				9CA20D5728E3C28400B2E14A /* Views */,
+				9C5CFC712953DA72001E37C0 /* Utilities */,
+				9C56DC2828DA70F600A16E3A /* Assets.xcassets */,
+				9C5CFC7529540403001E37C0 /* Multi-Convert.entitlements */,
+				9C5CFC742953FA7C001E37C0 /* Info.plist */,
+				9C56DC1028DA6EA100A16E3A /* Preview Content */,
+			);
+			path = "Multi-Convert";
+			sourceTree = "<group>";
+		};
+		9C56DC1028DA6EA100A16E3A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9C5CFC712953DA72001E37C0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9C5CFC722953DA8A001E37C0 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9CA20D5728E3C28400B2E14A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C56DC2A28DA70FB00A16E3A /* ContentView.swift */,
+				9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */,
+				9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */,
+				9C56DC2228DA6F1100A16E3A /* TempView.swift */,
+				9C56DC1828DA6EB400A16E3A /* SpeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C56DC0628DA6EA000A16E3A /* Multi-Convert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C56DC1528DA6EA100A16E3A /* Build configuration list for PBXNativeTarget "Multi-Convert" */;
+			buildPhases = (
+				9C56DC0328DA6EA000A16E3A /* Sources */,
+				9C56DC0428DA6EA000A16E3A /* Frameworks */,
+				9C56DC0528DA6EA000A16E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Multi-Convert";
+			productName = "Multi-Convert";
+			productReference = 9C56DC0728DA6EA000A16E3A /* Multi-Convert.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C56DBFF28DA6EA000A16E3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					9C56DC0628DA6EA000A16E3A = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 9C56DC0228DA6EA000A16E3A /* Build configuration list for PBXProject "Multi-Convert" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C56DBFE28DA6EA000A16E3A;
+			productRefGroup = 9C56DC0828DA6EA000A16E3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C56DC0628DA6EA000A16E3A /* Multi-Convert */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C56DC0528DA6EA000A16E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C56DC2928DA70F600A16E3A /* Assets.xcassets in Resources */,
+				9C56DC1228DA6EA100A16E3A /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C56DC0328DA6EA000A16E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C56DC2328DA6F1100A16E3A /* TempView.swift in Sources */,
+				9C56DC1F28DA6EE200A16E3A /* OhmsView.swift in Sources */,
+				9C5CFC732953DA8A001E37C0 /* Utilities.swift in Sources */,
+				9C56DC2B28DA70FB00A16E3A /* ContentView.swift in Sources */,
+				9C56DC0B28DA6EA000A16E3A /* Multi_ConvertApp.swift in Sources */,
+				9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */,
+				9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9C56DC1328DA6EA100A16E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9C56DC1428DA6EA100A16E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C56DC1628DA6EA100A16E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Multi-Convert/Multi-Convert.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Multi-Convert/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Multi-Convert/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Multi-Convert";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ferrigan.Multi-Convert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		9C56DC1728DA6EA100A16E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Multi-Convert/Multi-Convert.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Multi-Convert/Preview Content\"";
+				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Multi-Convert/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Multi-Convert";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ferrigan.Multi-Convert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C56DC0228DA6EA000A16E3A /* Build configuration list for PBXProject "Multi-Convert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C56DC1328DA6EA100A16E3A /* Debug */,
+				9C56DC1428DA6EA100A16E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C56DC1528DA6EA100A16E3A /* Build configuration list for PBXNativeTarget "Multi-Convert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C56DC1628DA6EA100A16E3A /* Debug */,
+				9C56DC1728DA6EA100A16E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C56DBFF28DA6EA000A16E3A /* Project object */;
+}
