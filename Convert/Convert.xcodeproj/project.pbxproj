@@ -7,28 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93FAB5E22A2FB749009CBE70 /* Calculators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E12A2FB749009CBE70 /* Calculators.swift */; };
+		93FAB5E42A2FB75E009CBE70 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E32A2FB75E009CBE70 /* Utilities.swift */; };
+		93FAB5EA2A2FB79A009CBE70 /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E52A2FB79A009CBE70 /* SpeedView.swift */; };
+		93FAB5EB2A2FB79A009CBE70 /* OhmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E62A2FB79A009CBE70 /* OhmsView.swift */; };
+		93FAB5EC2A2FB79A009CBE70 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E72A2FB79A009CBE70 /* TempView.swift */; };
+		93FAB5ED2A2FB79A009CBE70 /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E82A2FB79A009CBE70 /* DistanceView.swift */; };
+		93FAB5EE2A2FB79A009CBE70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB5E92A2FB79A009CBE70 /* ContentView.swift */; };
 		9C56DC0B28DA6EA000A16E3A /* ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC0A28DA6EA000A16E3A /* ConvertApp.swift */; };
 		9C56DC1228DA6EA100A16E3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */; };
-		9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1828DA6EB400A16E3A /* SpeedView.swift */; };
-		9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */; };
-		9C56DC1F28DA6EE200A16E3A /* OhmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */; };
-		9C56DC2328DA6F1100A16E3A /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC2228DA6F1100A16E3A /* TempView.swift */; };
 		9C56DC2928DA70F600A16E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C56DC2828DA70F600A16E3A /* Assets.xcassets */; };
-		9C56DC2B28DA70FB00A16E3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC2A28DA70FB00A16E3A /* ContentView.swift */; };
-		9C5CFC732953DA8A001E37C0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5CFC722953DA8A001E37C0 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93FAB5E12A2FB749009CBE70 /* Calculators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculators.swift; sourceTree = "<group>"; };
+		93FAB5E32A2FB75E009CBE70 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Utilities/Utilities.swift"; sourceTree = "<group>"; };
+		93FAB5E52A2FB79A009CBE70 /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedView.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Views/SpeedView.swift"; sourceTree = "<group>"; };
+		93FAB5E62A2FB79A009CBE70 /* OhmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OhmsView.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Views/OhmsView.swift"; sourceTree = "<group>"; };
+		93FAB5E72A2FB79A009CBE70 /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempView.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Views/TempView.swift"; sourceTree = "<group>"; };
+		93FAB5E82A2FB79A009CBE70 /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DistanceView.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Views/DistanceView.swift"; sourceTree = "<group>"; };
+		93FAB5E92A2FB79A009CBE70 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../../../../../../Downloads/Unit-Conversion-App-main/Multi-Convert/Views/ContentView.swift"; sourceTree = "<group>"; };
 		9C56DC0728DA6EA000A16E3A /* Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C56DC0A28DA6EA000A16E3A /* ConvertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertApp.swift; sourceTree = "<group>"; };
 		9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9C56DC1828DA6EB400A16E3A /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
-		9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
-		9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhmsView.swift; sourceTree = "<group>"; };
-		9C56DC2228DA6F1100A16E3A /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		9C56DC2828DA70F600A16E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C56DC2A28DA70FB00A16E3A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9C5CFC722953DA8A001E37C0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9C5CFC742953FA7C001E37C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5CFC7529540403001E37C0 /* Convert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Convert.entitlements; path = MacOS/Convert.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +87,8 @@
 		9C5CFC712953DA72001E37C0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9C5CFC722953DA8A001E37C0 /* Utilities.swift */,
+				93FAB5E32A2FB75E009CBE70 /* Utilities.swift */,
+				93FAB5E12A2FB749009CBE70 /* Calculators.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -93,11 +96,11 @@
 		9CA20D5728E3C28400B2E14A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C56DC2A28DA70FB00A16E3A /* ContentView.swift */,
-				9C56DC1E28DA6EE200A16E3A /* OhmsView.swift */,
-				9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */,
-				9C56DC2228DA6F1100A16E3A /* TempView.swift */,
-				9C56DC1828DA6EB400A16E3A /* SpeedView.swift */,
+				93FAB5E92A2FB79A009CBE70 /* ContentView.swift */,
+				93FAB5E82A2FB79A009CBE70 /* DistanceView.swift */,
+				93FAB5E62A2FB79A009CBE70 /* OhmsView.swift */,
+				93FAB5E52A2FB79A009CBE70 /* SpeedView.swift */,
+				93FAB5E72A2FB79A009CBE70 /* TempView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,13 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C56DC2328DA6F1100A16E3A /* TempView.swift in Sources */,
-				9C56DC1F28DA6EE200A16E3A /* OhmsView.swift in Sources */,
-				9C5CFC732953DA8A001E37C0 /* Utilities.swift in Sources */,
-				9C56DC2B28DA70FB00A16E3A /* ContentView.swift in Sources */,
+				93FAB5EB2A2FB79A009CBE70 /* OhmsView.swift in Sources */,
+				93FAB5E22A2FB749009CBE70 /* Calculators.swift in Sources */,
 				9C56DC0B28DA6EA000A16E3A /* ConvertApp.swift in Sources */,
-				9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */,
-				9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */,
+				93FAB5E42A2FB75E009CBE70 /* Utilities.swift in Sources */,
+				93FAB5ED2A2FB79A009CBE70 /* DistanceView.swift in Sources */,
+				93FAB5EE2A2FB79A009CBE70 /* ContentView.swift in Sources */,
+				93FAB5EC2A2FB79A009CBE70 /* TempView.swift in Sources */,
+				93FAB5EA2A2FB79A009CBE70 /* SpeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kyleferrigan.convert;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.kyleferrigan.convert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -353,7 +357,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Convert/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Convert;
+				INFOPLIST_KEY_CFBundleDisplayName = "Convert Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -365,7 +369,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kyleferrigan.convert;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.kyleferrigan.convert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
