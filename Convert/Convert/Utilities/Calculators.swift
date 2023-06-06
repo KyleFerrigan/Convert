@@ -1,6 +1,6 @@
 //
 //  Calculators.swift
-//  Multi-Convert
+//  Convert
 //
 //  Created by Kyle Ferrigan on 2022-12-22.
 //

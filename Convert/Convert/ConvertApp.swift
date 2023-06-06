@@ -2,7 +2,8 @@
 //  ConvertApp.swift
 //  Convert
 //
-//  Created by Kyle Ferrigan on 9/20/22.
+//  Created by Kyle Ferrigan on 5/13/20.
+//  Copyright © 2020 Kyle Ferrigan. All rights reserved.
 //
 
 import SwiftUI
