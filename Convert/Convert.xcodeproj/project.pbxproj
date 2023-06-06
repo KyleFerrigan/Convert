@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C56DC0B28DA6EA000A16E3A /* Multi_ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */; };
+		9C56DC0B28DA6EA000A16E3A /* ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC0A28DA6EA000A16E3A /* ConvertApp.swift */; };
 		9C56DC1228DA6EA100A16E3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */; };
 		9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1828DA6EB400A16E3A /* SpeedView.swift */; };
 		9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		9C56DC0728DA6EA000A16E3A /* Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convert.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_ConvertApp.swift; sourceTree = "<group>"; };
+		9C56DC0A28DA6EA000A16E3A /* ConvertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertApp.swift; sourceTree = "<group>"; };
 		9C56DC1128DA6EA100A16E3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C56DC1828DA6EB400A16E3A /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
 		9C56DC1A28DA6EC000A16E3A /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
@@ -30,7 +30,7 @@
 		9C56DC2A28DA70FB00A16E3A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9C5CFC722953DA8A001E37C0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9C5CFC742953FA7C001E37C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C5CFC7529540403001E37C0 /* Multi-Convert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Multi-Convert.entitlements"; path = "MacOS/Multi-Convert.entitlements"; sourceTree = "<group>"; };
+		9C5CFC7529540403001E37C0 /* Convert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Convert.entitlements; path = MacOS/Convert.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 		9C56DBFE28DA6EA000A16E3A = {
 			isa = PBXGroup;
 			children = (
-				9C56DC0928DA6EA000A16E3A /* Multi-Convert */,
+				9C56DC0928DA6EA000A16E3A /* Convert */,
 				9C56DC0828DA6EA000A16E3A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,18 +60,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9C56DC0928DA6EA000A16E3A /* Multi-Convert */ = {
+		9C56DC0928DA6EA000A16E3A /* Convert */ = {
 			isa = PBXGroup;
 			children = (
-				9C56DC0A28DA6EA000A16E3A /* Multi_ConvertApp.swift */,
+				9C56DC0A28DA6EA000A16E3A /* ConvertApp.swift */,
 				9CA20D5728E3C28400B2E14A /* Views */,
 				9C5CFC712953DA72001E37C0 /* Utilities */,
 				9C56DC2828DA70F600A16E3A /* Assets.xcassets */,
-				9C5CFC7529540403001E37C0 /* Multi-Convert.entitlements */,
+				9C5CFC7529540403001E37C0 /* Convert.entitlements */,
 				9C5CFC742953FA7C001E37C0 /* Info.plist */,
 				9C56DC1028DA6EA100A16E3A /* Preview Content */,
 			);
-			path = "Multi-Convert";
+			path = Convert;
 			sourceTree = "<group>";
 		};
 		9C56DC1028DA6EA100A16E3A /* Preview Content */ = {
@@ -176,7 +176,7 @@
 				9C56DC1F28DA6EE200A16E3A /* OhmsView.swift in Sources */,
 				9C5CFC732953DA8A001E37C0 /* Utilities.swift in Sources */,
 				9C56DC2B28DA70FB00A16E3A /* ContentView.swift in Sources */,
-				9C56DC0B28DA6EA000A16E3A /* Multi_ConvertApp.swift in Sources */,
+				9C56DC0B28DA6EA000A16E3A /* ConvertApp.swift in Sources */,
 				9C56DC1928DA6EB400A16E3A /* SpeedView.swift in Sources */,
 				9C56DC1B28DA6EC000A16E3A /* DistanceView.swift in Sources */,
 			);
@@ -305,14 +305,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Multi-Convert/Multi-Convert.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Convert/Convert.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Multi-Convert/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Convert/Preview Content\"";
 				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Multi-Convert/Info.plist";
+				INFOPLIST_FILE = Convert/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Convert;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -327,6 +328,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kyleferrigan.convert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -342,14 +344,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Multi-Convert/Multi-Convert.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Convert/Convert.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Multi-Convert/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Convert/Preview Content\"";
 				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Multi-Convert/Info.plist";
+				INFOPLIST_FILE = Convert/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Convert;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -364,6 +367,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kyleferrigan.convert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
