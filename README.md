@@ -1,4 +1,4 @@
-#Multi-Convert
+#Convert
 A SwiftUI Converter App
 
 Made by Kyle Ferrigan
