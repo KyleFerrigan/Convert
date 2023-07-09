@@ -16,7 +16,8 @@ func calcOhms(usrIn : String, usr2In : String, usrIndex : Int, usr2Index : Int) 
 	var wattsOut : String = ""
 	
 	//if either input is blank do not compute
-	if ((usrIn == "") || (usr2In == "")){ return [""]}
+	if ((usrIn == "") || (usr2In == "")){ return [""] }
+	
 	let usrDbl = (Double(usrIn) ?? 0)
 	let usr2Dbl = (Double(usr2In) ?? 0)
 	

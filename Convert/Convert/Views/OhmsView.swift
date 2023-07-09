@@ -70,7 +70,11 @@ struct OhmsView: View {
 					Button(
 						action:{
 							var temp : [String]
-							temp = calcOhms(usrIn: self.usrIn, usr2In: self.usr2In, usrIndex: self.usrIndex, usr2Index: self.usr2Index)
+							if ((usrIn == "") || (usr2In == "")){
+								temp = ["","","",""]
+							} else {
+								temp = calcOhms(usrIn: self.usrIn, usr2In: self.usr2In, usrIndex: self.usrIndex, usr2Index: self.usr2Index)
+							}
 							ampsOut = temp[0]
 							voltsOut = temp[1]
 							ohmsOut = temp[2]
